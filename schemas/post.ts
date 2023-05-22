@@ -2,6 +2,7 @@ import { BookIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
+import categoryType from './category'
 import authorType from './author'
 
 /**
@@ -70,6 +71,13 @@ export default defineType({
       type: 'reference',
       to: [{ type: authorType.name }],
     }),
+{
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: {type: categoryType.name}}],
+    },
+    
   ],
   preview: {
     select: {
