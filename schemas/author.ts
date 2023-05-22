@@ -13,6 +13,16 @@ export default defineType({
       type: 'string',
       validation: (rule) => rule.required(),
     }),
+  defineField( 
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 96,
+    },
+    }),
     defineField({
       name: 'picture',
       title: 'Picture',
