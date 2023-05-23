@@ -71,12 +71,12 @@ export default defineType({
       type: 'reference',
       to: [{ type: authorType.name }],
     }),
-{
+       defineField({
       name: 'categories',
       title: 'Categories',
-      type: 'array',
-      of: [{type: 'reference', to: [{type: categoryType.name }] }],
-    },
+      type: 'reference',
+       to: [{ type: categoryType.name }],
+    }),
     
   ],
   preview: {
