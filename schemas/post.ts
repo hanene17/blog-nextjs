@@ -78,20 +78,16 @@ export default defineType({
     }),
     
   ],
-  preview: {
+  
+   preview: {
     select: {
       title: 'title',
       author: 'author.name',
-      date: 'date',
       media: 'coverImage',
     },
-    prepare({ title, media, author, date }) {
-      const subtitles = [
-        author && `by ${author}`,
-        date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
-      ].filter(Boolean)
-
-      return { title, media, subtitle: subtitles.join(' ') }
+    prepare(selection) {
+      const {author} = selection
+      return {...selection, subtitle: author && `by ${author}`}
     },
   },
 })
