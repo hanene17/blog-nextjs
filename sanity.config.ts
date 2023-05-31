@@ -39,7 +39,7 @@ export default defineConfig({
     productionUrl({
       apiVersion,
       previewSecretId,
-      types: [postType.name, settingsType.name],
+      types: [postType.name, categoryType.name, settingsType.name],
     }),
     // Add an image asset source for Unsplash
     unsplashImageAsset(),
