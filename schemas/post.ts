@@ -75,7 +75,7 @@ export default defineType({
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: categoryType.name}}],
-    )},
+    }),
        
     
   ],
